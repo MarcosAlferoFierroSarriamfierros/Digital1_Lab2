@@ -67,7 +67,7 @@ Con base al problema podemos enumerar los siguientes requisitos:
      1. Aceptable:
      2. Regular:
      3. Crítico:
-     4. 
+
    - Identificación de los niveles de carga crítica y aceptable.  
     1. Aceptable:
     2. Crítica:
@@ -76,36 +76,68 @@ Con base al problema podemos enumerar los siguientes requisitos:
    En el siguiente apartado se consignan los módulos creados para la solución usando Verilog y VSCode
    
    - **Módulos principales**:  
-     - Sensor de carga para cada batería:
-       
-     - Unidad de detección de baterías descargadas:
-       
-     - Unidad de cálculo del nivel de carga total:
-       
-     - Generadores de señales y alarmas de advertencia:
+     - Advertencia para carga crítica:
     
-     - Testbench y casos de prueba:
+       ![image](https://github.com/user-attachments/assets/f984c1da-3f3e-4cb6-9f5d-0cd3ea4a5659)
+
        
+     - Cálculo de carga del banco:
+    
+       ![image](https://github.com/user-attachments/assets/9e9aa821-c171-4ade-9bd6-b6e0438df717)
+
+       
+     - Unidad de evaluación de Carga (Detecta en que estado está el banco):
+    
+       ![image](https://github.com/user-attachments/assets/614b9101-2c76-475c-bc32-56e6808f1e48)
+
+       
+     - Módulo principal: Se encarga de calcular el voltaje de batería, determinar el estado de carga y de activar la alarma si así se requiere:
+    
+       ![image](https://github.com/user-attachments/assets/e257aa77-a2a0-4704-bf0a-82f518184c1f)
+
+    
+     - Testbench y casos de prueba: En el testbench se instancia el módulo principal. Se establecen casos de prueba que permitan observar la activación o no de la alarma en condiciones de carga crítica, regular y aceptable.
+       
+![image](https://github.com/user-attachments/assets/5380a38a-b25f-409f-9124-10cd155226fc)
+
 
 ---
 
 ## Simulación y Evidencias
 
-1. **Simulación del Diseño**  
-   - Uso del Testbech, creación del archivo VCD y visualización de resultados en GTKwave:
-     
-   - Validación de resultados:
-     
+1. **Simulación del Diseño**
+2. 
+     Una vez ejecutado el testbench, podemos crear el archivo **.vcd**:
+   
+![image](https://github.com/user-attachments/assets/c2ff4bd3-9413-443d-8fc8-aafdca3dbccd)
+
+   - Validación de resultados: Se muestran los resultados en GTKwave:
+
+  
+          
 ---
 
 ## Implementación en FPGA
 
 1. **Proceso de Implementación**
    Para la implmentación física se usó una FPGA, exactamnte la **Cyclone IV** en conjunto con con **Quartus IDE**, el cual será el software de de desarrollo.
+   
+
+
    A continuación se describe el proceso experimental para la implmentación de los módulos en la FPGA:
 
 3. **Evidencias del Funcionamiento**  
    - Finalmente se muestra la FPGA con los módulos implmentados y evidencia fotográfica de su correcto funcionamiento:
+   a. Ambas baterías descargadas: Fíjese en el cursor rojo.
+
+
+Se observa que la suma de carga de las baterías es cero, además vemos que las señales de carga aceptable y regular están apagadas, mientras que la de carga crítica y Alerta están activadas-
+
+b. Ambas baterías en estado crítico:
+
+
+
+En este caso, una batería tiene un
 
 ---
 
