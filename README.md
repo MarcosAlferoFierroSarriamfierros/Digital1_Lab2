@@ -111,10 +111,36 @@ Con base al problema podemos enumerar los siguientes requisitos:
    
 ![image](https://github.com/user-attachments/assets/c2ff4bd3-9413-443d-8fc8-aafdca3dbccd)
 
-   - Validación de resultados: Se muestran los resultados en GTKwave:
+   - Validación de resultados: Se muestran los resultados en GTKwave: Se muestra de forma gráfica los cinco casos de prueba.
+   - a. Ambas baterías descargadas: 
 
+  ![image](https://github.com/user-attachments/assets/a14d12f8-adf0-4938-8b74-b371d3df91dd)
+
+  En este caso, las baterías están completamente descargadas y vemos que la carga total es de cero, el aviso de carga aceptable y carga regular están apagadas, mientras que la de carga crítica y Alarma están activadas.
+
+  - b. Baterías en estado crítico:
+
+![image](https://github.com/user-attachments/assets/c175e8aa-ba85-4589-8266-b0a2cd386918)
+
+Una de las baterías está en una carga de 2V y otra con una carga de 1V, se observa que el sumador nos arroja una carga total de 3V, lo cual es correcto, la Alerta y el aviso de carga crítica están activos.
+
+- c. Una batería en carga regular y otra en estado crítico:
+
+![image](https://github.com/user-attachments/assets/47f511ab-874a-480d-9b03-c0bf4f392766)
+
+La suma de cargas es de 9V, el banco se encuentra en estado Regular. Los demás avisos están inactivos.
   
-          
+- d. Ambas baterías completamente cargadas:
+
+![image](https://github.com/user-attachments/assets/5f8e303e-7177-4470-bfb9-9ccf9eb6b70e)
+
+Cada batería tiene 15V, lo que indica el estado de carga máxima, solamente el aviso de carga Aceptable está activado. Lo cual es correcto.
+- e. Baterías en estado regular de carga:
+
+![image](https://github.com/user-attachments/assets/5d5152c9-a339-452c-91f4-32cf85be5f9f)
+
+Las baterías cuentan con 5V y con 6V de carga, la suma de cargas nos da como rsultado 11V y tenemos que solamente el aviso de carga Regular está activo
+         
 ---
 
 ## Implementación en FPGA
