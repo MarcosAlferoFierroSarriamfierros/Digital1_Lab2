@@ -38,15 +38,16 @@ Se identificó cuándo una batería específica tenía un voltaje de 0. En térm
    - **sumadorCompleto:** Implementa el sumador de 4 bits para cada batería.
    - **cargasBateria:** Se encarga de representar y gestionar el nivel de carga de cada batería.
    - **calculoCarga:** Realiza el cálculo total de la carga sumando ambas baterías y proporciona el resultado en un formato que se pueda evaluar fácilmente.
-**3. Evaluación de la Carga del Banco de Baterías**
+   - 
+## 3. Evaluación de la Carga del Banco de Baterías
 Además de evaluar cada batería de forma individual, el laboratorio requiere analizar el banco de baterías como un conjunto. Para ello, se implementó el módulo evaluacionCarga, que permite clasificar el estado del banco de baterías según tres categorías:
-**Carga Crítica:**
+#### Carga Crítica:
 Se activa cuando los tres bits más significativos son 0 (es decir, los bits 3, 2 y 1 son 0).
 Esto indica que la carga del banco es extremadamente baja.
-**Carga Regular:**
+#### Carga Regular:
 Se activa cuando al menos uno de los bits 3 o 2 es 1.
 Indica que la batería tiene una carga intermedia y requiere monitoreo, pero no es crítica aún.
-**Carga Aceptable:**
+#### Carga Aceptable:
 Se activa cuando el bit más significativo (bit 3) es 1.
 Indica que la batería tiene un nivel de carga adecuado.
 Implementación del Comparador
