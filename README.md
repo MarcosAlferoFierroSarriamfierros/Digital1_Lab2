@@ -1,6 +1,6 @@
-# Lab02 - Medidor de carga
+# Informe de Laboratorio 2: Medidor de Cargas
 
-## Integrantes
+### Integrantes
 
 - Alber Enrique Frias Pacheco - afrias@unal.edu.co  
 - Edgar Alfonso Navarro Perez - enavarro@unal.edu.co  
@@ -8,18 +8,37 @@
 
 ---
 
-## Informe
-
 ### Índice
 
-1. [Diseño implementado](#diseño-implementado)  
-2. [Simulaciones](#simulaciones)  
-3. [Implementación](#implementación)  
-4. [Preguntas](#preguntas)  
-5. [Conclusiones](#conclusiones)  
-6. [Referencias](#referencias)  
+1. [ Descripción General](#descripción-general) 
+2. [Diseño implementado](#diseño-implementado)  
+3. [Simulaciones](#simulaciones)  
+4. [Implementación](#implementación)  
+5. [Preguntas](#preguntas)  
+6. [Conclusiones](#conclusiones)  
+7. [Referencias](#referencias)  
 
 ---
+
+## Descripción General
+Para la correcta implementación de la lógica del laboratorio “Medidor de Cargas”, se decidió abordar el problema general dividiéndolo en planteamientos más pequeños. Esta estrategia nos permitió estructurar el proyecto en distintos módulos independientes, facilitando así su diseño, implementación y análisis. A continuación, se explica en detalle cada una de las etapas desarrolladas y los módulos implementados.
+
+
+## 1. Sumador Completo de 4 Bits
+
+### Descripción del Sumador Completo
+En primera instancia, definimos el funcionamiento del sumador completo, siguiendo la lógica estudiada en clase. Para extender esta funcionalidad a una operación de 4 bits, se realizó la instanciación del sumador completo 4 veces en cascada.
+#### Objetivo del Sumador Completo de 4 Bits
+El propósito de implementar un sumador completo de 4 bits es poder analizar el estado del banco de baterías en el cual cada una de las baterías puede tener un valor máximo de 15. Se consideró que cada batería debía evaluarse como un conjunto y, a partir de su suma binaria, determinar en qué estado se encuentra el banco de baterías en su conjunto.
+## 2. Estado de las Baterías
+Para el análisis del estado de las baterías, se establecieron dos puntos importantes:
+- 1. Análisis Individual de Baterías:
+Se identificó cuándo una batería específica tenía un voltaje de 0. En términos de hardware, esto se traduce a que la batería presenta un valor binario de “0000”. Para este caso, se diseñó un sistema de alerta auditiva utilizando un buzzer integrado en la tarjeta de desarrollo. Esta alerta se activa automáticamente al detectar que cualquiera de las dos baterías tiene un valor de “0000”.
+- 2. Módulos Implementados:
+   -- sumadorCompleto: Implementa el sumador de 4 bits para cada batería.
+   -- cargasBateria: Se encarga de representar y gestionar el nivel de carga de cada batería.
+   -- calculoCarga: Realiza el cálculo total de la carga sumando ambas baterías y proporciona el resultado en un formato que se pueda evaluar fácilmente.
+
 
 ## Diseño implementado
 
