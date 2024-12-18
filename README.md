@@ -32,9 +32,9 @@ En primera instancia, definimos el funcionamiento del sumador completo, siguiend
 El propósito de implementar un sumador completo de 4 bits es poder analizar el estado del banco de baterías en el cual cada una de las baterías puede tener un valor máximo de 15. Se consideró que cada batería debía evaluarse como un conjunto y, a partir de su suma binaria, determinar en qué estado se encuentra el banco de baterías en su conjunto.
 ## 2. Estado de las Baterías
 Para el análisis del estado de las baterías, se establecieron dos puntos importantes:
-**1. Análisis Individual de Baterías:**
+1. **Análisis Individual de Baterías:**
 Se identificó cuándo una batería específica tenía un voltaje de 0. En términos de hardware, esto se traduce a que la batería presenta un valor binario de “0000”. Para este caso, se diseñó un sistema de alerta auditiva utilizando un buzzer integrado en la tarjeta de desarrollo. Esta alerta se activa automáticamente al detectar que cualquiera de las dos baterías tiene un valor de “0000”.
-**2. Módulos Implementados:**
+2. **Módulos Implementados:**
    - **sumadorCompleto:** Implementa el sumador de 4 bits para cada batería.
    - **cargasBateria:** Se encarga de representar y gestionar el nivel de carga de cada batería.
    - **calculoCarga:** Realiza el cálculo total de la carga sumando ambas baterías y proporciona el resultado en un formato que se pueda evaluar fácilmente.
@@ -50,7 +50,7 @@ Indica que la batería tiene una carga intermedia y requiere monitoreo, pero no 
 #### Carga Aceptable:
 Se activa cuando el bit más significativo (bit 3) es 1.
 Indica que la batería tiene un nivel de carga adecuado.
-Implementación del Comparador
+### Implementación del Comparador
 Para llevar a cabo esta clasificación, utilizamos un comparador que evalúa los bits más y menos significativos de la salida del sumador. Los parámetros establecidos para las condiciones son:
 - **Carga Crítica:**
 Bits 3, 2 y 1= 0
