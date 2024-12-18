@@ -69,6 +69,13 @@ El sistema de alertas se diseñó con el fin de proporcionar notificaciones inme
 Cuando una de las baterías presenta un valor de “0000”, se activa una alerta auditiva para indicar que una de las baterías está completamente descargada.
 ### 2. Carga Crítica del Banco de Baterías:
 Si el banco de baterías tiene un nivel de carga equivalente al 10% o menos de su capacidad total, se activa también una alerta auditiva mediante el buzzer
+## 5. Estructura del Proyecto y Módulo Principal
+Con todos los módulos desarrollados e implementados, se procedió a diseñar un módulo principal (main) que permite instanciar y llamar a cada uno de los módulos de forma ordenada. Este módulo principal garantiza la correcta implementación y funcionamiento de la lógica completa del medidor de cargas.
+### Resumen de Módulos Implementados
+- sumadorCompleto – Realiza la suma binaria de 4 bits.
+- cargasBateria – Representa y gestiona el nivel de carga de cada batería.
+- calculoCarga – Calcula la carga total del banco de baterías.
+- evaluacionCarga – Evalúa y clasifica el estado del banco de baterías según las condiciones establecidas.
 
 ## Diseño implementado
 
