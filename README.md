@@ -23,6 +23,7 @@
 ## Descripción General
 Para la correcta implementación de la lógica del laboratorio “Medidor de Cargas”, se decidió abordar el problema general dividiéndolo en planteamientos más pequeños. Esta estrategia nos permitió estructurar el proyecto en distintos módulos independientes, facilitando así su diseño, implementación y análisis. A continuación, se explica en detalle cada una de las etapas desarrolladas y los módulos implementados.
 
+---
 
 ## 1. Sumador Completo de 4 Bits
 
@@ -34,10 +35,13 @@ El propósito de implementar un sumador completo de 4 bits es poder analizar el 
 Para el análisis del estado de las baterías, se establecieron dos puntos importantes:
 1. **Análisis Individual de Baterías:**
 Se identificó cuándo una batería específica tenía un voltaje de 0. En términos de hardware, esto se traduce a que la batería presenta un valor binario de “0000”. Para este caso, se diseñó un sistema de alerta auditiva utilizando un buzzer integrado en la tarjeta de desarrollo. Esta alerta se activa automáticamente al detectar que cualquiera de las dos baterías tiene un valor de “0000”.
+---
 2. **Módulos Implementados:**
    - **sumadorCompleto:** Implementa el sumador de 4 bits para cada batería.
    - **cargasBateria:** Se encarga de representar y gestionar el nivel de carga de cada batería.
    - **calculoCarga:** Realiza el cálculo total de la carga sumando ambas baterías y proporciona el resultado en un formato que se pueda evaluar fácilmente.
+  
+---
      
 ## 3. Evaluación de la Carga del Banco de Baterías
 Además de evaluar cada batería de forma individual, el laboratorio requiere analizar el banco de baterías como un conjunto. Para ello, se implementó el módulo evaluacionCarga, que permite clasificar el estado del banco de baterías según tres categorías:
@@ -58,7 +62,13 @@ Bits 3, 2 y 1= 0
 Bits 3 o 2  = 1
 - **Carga Aceptable:**
 Bit 3 = 1
-
+---
+## 4. Alertas Auditivas y Visuales
+El sistema de alertas se diseñó con el fin de proporcionar notificaciones inmediatas al usuario. Se implementó un buzzer que se activa en los siguientes casos:
+### 1. Batería con Voltaje Nulo:
+Cuando una de las baterías presenta un valor de “0000”, se activa una alerta auditiva para indicar que una de las baterías está completamente descargada.
+### 2. Carga Crítica del Banco de Baterías:
+Si el banco de baterías tiene un nivel de carga equivalente al 10% o menos de su capacidad total, se activa también una alerta auditiva mediante el buzzer
 
 ## Diseño implementado
 
